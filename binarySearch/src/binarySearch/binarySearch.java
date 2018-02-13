@@ -1,5 +1,5 @@
 package binarySearch;
-
+/*Added for Binary Search */
 import java.util.Scanner;
 
 public class binarySearch {
@@ -25,17 +25,17 @@ public class binarySearch {
 		int startPosition = 0;
 		int midPosition = len / 2;
 		int lastPosition = len-1;
-		if (arr[startPosition] < element && arr[lastPosition] > element) {
+		if (arr[startPosition] <= element && arr[lastPosition] >= element) {
 			do {
 				if (element > arr[midPosition]) {
 					startPosition = midPosition;
 				} else if (element < arr[midPosition]) {
 					lastPosition = midPosition;
 				} else {
-					return (midPosition);
+					return (midPosition+1);
 				}
 				midPosition = startPosition+(lastPosition-startPosition)/2;
-			} while (midPosition >= 0 || midPosition <= (len - 1));
+			}while(lastPosition >= 0 && startPosition <= len);
 		}
 		else
 		{
